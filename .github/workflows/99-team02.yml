@@ -558,7 +558,7 @@ jobs:
                     
             # Notes
 
-            * For *this* issue, tt is not necessary that the table be linked to a
+            * For *this* issue, it is not necessary that the table be linked to a
               page that connects it to the backend; that will be done in a later issue.
 
             * This issue illustrates how it is possible to create at least part of the frontend
