@@ -366,6 +366,7 @@ jobs:
                   and `ucsbDatesFixtures.js` files in the same directory.
             - [ ] Each example should correspond to the JSON format of an object returned by 
                   the GET API endpoint from ${{env.ASSIGNMENT}} for the `${{env.name}}` database table object.
+                  You can see this by trying out the Swagger GET API Endpoint from team01.
 
             # What to do next
 
