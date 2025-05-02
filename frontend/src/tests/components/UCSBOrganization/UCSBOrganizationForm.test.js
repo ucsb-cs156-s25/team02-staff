@@ -30,7 +30,7 @@ describe("UCSBOrganizationForm tests", () => {
         <Router>
           <UCSBOrganizationForm />
         </Router>
-      </QueryClientProvider>
+      </QueryClientProvider>,
     );
 
     expect(await screen.findByText(/Create/)).toBeInTheDocument();
@@ -49,7 +49,7 @@ describe("UCSBOrganizationForm tests", () => {
             initialContents={ucsbOrganizationFixtures.oneOrganization[0]}
           />
         </Router>
-      </QueryClientProvider>
+      </QueryClientProvider>,
     );
 
     expect(await screen.findByText(/Create/)).toBeInTheDocument();
@@ -64,19 +64,19 @@ describe("UCSBOrganizationForm tests", () => {
     expect(screen.getByTestId(`${testId}-orgCode`)).toHaveValue("org1");
 
     expect(
-      await screen.findByTestId(`${testId}-orgTranslationShort`)
+      await screen.findByTestId(`${testId}-orgTranslationShort`),
     ).toBeInTheDocument();
     expect(screen.getByText(`OrgTranslationShort`)).toBeInTheDocument();
     expect(screen.getByTestId(`${testId}-orgTranslationShort`)).toHaveValue(
-      "Org 1"
+      "Org 1",
     );
 
     expect(
-      await screen.findByTestId(`${testId}-orgTranslation`)
+      await screen.findByTestId(`${testId}-orgTranslation`),
     ).toBeInTheDocument();
     expect(screen.getByText(`OrgTranslation`)).toBeInTheDocument();
     expect(screen.getByTestId(`${testId}-orgTranslation`)).toHaveValue(
-      "Organization 1"
+      "Organization 1",
     );
 
     expect(await screen.findByTestId(`${testId}-inactive`)).toBeInTheDocument();
@@ -90,7 +90,7 @@ describe("UCSBOrganizationForm tests", () => {
         <Router>
           <UCSBOrganizationForm />
         </Router>
-      </QueryClientProvider>
+      </QueryClientProvider>,
     );
     expect(await screen.findByTestId(`${testId}-cancel`)).toBeInTheDocument();
     const cancelButton = screen.getByTestId(`${testId}-cancel`);
@@ -106,7 +106,7 @@ describe("UCSBOrganizationForm tests", () => {
         <Router>
           <UCSBOrganizationForm />
         </Router>
-      </QueryClientProvider>
+      </QueryClientProvider>,
     );
 
     expect(await screen.findByText(/Create/)).toBeInTheDocument();
@@ -116,28 +116,8 @@ describe("UCSBOrganizationForm tests", () => {
 
     await screen.findByText(/OrgCode is required/);
     expect(
-      screen.getByText(/OrgTranslationShort is required/)
+      screen.getByText(/OrgTranslationShort is required/),
     ).toBeInTheDocument();
     expect(screen.getByText(/OrgTranslation is required/)).toBeInTheDocument();
   });
-
-  //   test("correctly reads the value of the inactive field", async () => {
-  //     render(
-  //       <QueryClientProvider client={queryClient}>
-  //         <Router>
-  //           <UCSBOrganizationForm />
-  //         </Router>
-  //       </QueryClientProvider>
-  //     );
-
-  //     // Ensure the form is rendered and the checkbox is found
-  //     const inactiveCheckbox = await screen.findByTestId(`${testId}-inactive`);
-  //     expect(inactiveCheckbox).toBeInTheDocument();
-
-  //     expect(inactiveCheckbox).not.toBeChecked();
-
-  //     fireEvent.click(inactiveCheckbox);
-
-  //     expect(inactiveCheckbox).toBeChecked();
-  //   });
 });
